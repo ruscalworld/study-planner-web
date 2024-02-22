@@ -27,9 +27,14 @@ function TaskCell({ task }: { task: Task }) {
   const available = task.status === TaskStatus.Available
   const theme = useTheme()
 
-  function mutateProgressWrapper() {
+  async function mutateProgressWrapper() {
     setLoading(true)
-    return mutateProgress().finally(() => setLoading(false))
+
+    try {
+      return await mutateProgress()
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -72,6 +77,7 @@ function TaskCell({ task }: { task: Task }) {
       { available && (
         <TaskMenu
           task={ task }
+          progress={ progress }
           popupState={ popupState }
           disciplineId={ disciplineId }
           mutateProgress={ mutateProgressWrapper }
