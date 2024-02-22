@@ -6,7 +6,7 @@ const client = makeClient()
 
 function makeClient(): AxiosInstance {
   const newClient = axios.create({
-    baseURL: localStorage.getItem('base-url') ?? 'http://127.0.0.1:8080/v1',
+    baseURL: localStorage.getItem('base-url') ?? 'https://api.diary.ruscal.world/v1',
   })
 
   newClient.interceptors.request.use(async (config) => {
