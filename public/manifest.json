@@ -11,8 +11,14 @@
   "icons": [
     {
       "src": "/favicon.svg",
-      "purpose": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/favicon-maskable.svg",
+      "type": "image/svg+xml",
+      "purpose": "maskable",
+      "sizes": "512x512"
     }
   ]
 }
