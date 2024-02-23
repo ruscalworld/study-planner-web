@@ -2,6 +2,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import { Outlet } from 'react-router-dom'
 import AuthProvider from './AuthProvider.tsx'
 import AppLayout from './components/AppLayout.tsx'
+import ModalProvider from './components/ModalProvider.tsx'
 
 const theme = createTheme({
   palette: {
@@ -48,11 +49,13 @@ function App() {
   return (
     <ThemeProvider theme={ theme }>
       <CssBaseline/>
-      <AuthProvider>
-        <AppLayout>
-          <Outlet/>
-        </AppLayout>
-      </AuthProvider>
+      <ModalProvider>
+        <AuthProvider>
+          <AppLayout>
+            <Outlet/>
+          </AppLayout>
+        </AuthProvider>
+      </ModalProvider>
     </ThemeProvider>
   )
 }

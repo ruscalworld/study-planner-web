@@ -60,12 +60,12 @@ function TaskDetailsDialog({ task, progress, disciplineId, open, onClose }: Task
                 <Avatar><Link/></Avatar>
               </ListItemAvatar>
               <ListItemText
-                sx={ {
+                sx={{
                   '.MuiListItemText-secondary': {
                     textOverflow: 'ellipsis',
                     overflow: 'hidden',
                   },
-                } }
+                }}
                 primary={ link.name }
                 secondary={ link.url }
               />
