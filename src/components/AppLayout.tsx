@@ -5,7 +5,9 @@ import Footer from './Footer.tsx'
 function AppLayout({ children }: { children: ReactNode }) {
   return (
     <Box sx={{ minHeight: '100vh' }}>
-      { children }
+      <Box sx={{ minHeight: 'calc(100vh - 48px)' }}>
+        { children }
+      </Box>
       <Footer/>
     </Box>
   )
