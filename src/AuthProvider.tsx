@@ -28,7 +28,7 @@ function AuthProvider({ children }: { children: ReactNode | undefined }): ReactN
     }
 
     if (requiresRefresh) {
-      navigate('/auth/login')
+      navigate('/auth/sign-in')
       return
     }
   }, [])

@@ -88,7 +88,7 @@ export function inspectToken(accessToken: string): TokenInspectionResult {
   // Consider token requires refresh if more than 1/7 of its lifetime passed already
   const lifetime = expiresAt - issuedAt
   const now = new Date().getTime() / 1000
-  return { requiresRefresh: now > issuedAt + lifetime / 7, canBeRefreshed: true }
+  return { requiresRefresh: now > issuedAt + lifetime / 7, canBeRefreshed: now < expiresAt }
 }
 
 export interface Token {
